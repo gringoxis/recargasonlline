@@ -3,65 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Cookies</title>
+    <title>Loja de Pneus</title>
     <style>
-        /* Estilos do banner centralizado */
-        #cookie-banner {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 16px;
-            z-index: 1000;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        #cookie-banner button {
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 20px;
+            padding: 10px;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .product-card button {
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
+            padding: 10px;
             margin-top: 10px;
+            cursor: pointer;
             border-radius: 5px;
         }
-
-        #cookie-banner button:hover {
+        .product-card button:hover {
             background-color: #45a049;
         }
-
-        /* Ocultar o banner quando o cookie for aceito */
-        .cookie-accepted #cookie-banner {
-            display: none;
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Banner de cookies -->
-    <div id="cookie-banner">
-        <p>Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com o uso de cookies. <a href="#">Saiba mais</a>.</p>
-        <button onclick="acceptCookies()">Aceitar</button>
+
+<header>
+    <h1>Bem-vindo à Loja de Pneus!</h1>
+    <p>Os melhores pneus para o seu carro.</p>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Promoções</a>
+    <a href="#">Contato</a>
+</nav>
+
+<div class="container">
+    <h2>Produtos em Destaque</h2>
+
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Pneu A">
+        <h3>Pneu A</h3>
+        <p>Pneu de alta performance para carros de passeio.</p>
+        <button>Comprar</button>
     </div>
 
-    <script>
-        // Verifica se o usuário já aceitou os cookies
-        if (localStorage.getItem("cookiesAccepted")) {
-            document.body.classList.add("cookie-accepted");
-        }
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Pneu B">
+        <h3>Pneu B</h3>
+        <p>Pneu resistente e durável para uso em terrenos irregulares.</p>
+        <button>Comprar</button>
+    </div>
 
-        // Função para aceitar os cookies
-        function acceptCookies() {
-            localStorage.setItem("cookiesAccepted", "true");
-            document.body.classList.add("cookie-accepted");
-        }
-    </script>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Pneu C">
+        <h3>Pneu C</h3>
+        <p>Pneu econômico, ideal para quem busca eficiência no combustível.</p>
+        <button>Comprar</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Loja de Pneus. Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>
