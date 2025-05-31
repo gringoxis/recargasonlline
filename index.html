@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies</title>
+    <style>
+        /* Estilos do banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        #cookie-banner button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        #cookie-banner button:hover {
+            background-color: #45a049;
+        }
+
+        /* Ocultar o banner quando o cookie for aceito */
+        .cookie-accepted #cookie-banner {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner de cookies -->
+    <div id="cookie-banner">
+        <p>Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com o uso de cookies. <a href="#">Saiba mais</a>.</p>
+        <button onclick="acceptCookies()">Aceitar</button>
+    </div>
+
+    <script>
+        // Verifica se o usuário já aceitou os cookies
+        if (localStorage.getItem("cookiesAccepted")) {
+            document.body.classList.add("cookie-accepted");
+        }
+
+        // Função para aceitar os cookies
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.body.classList.add("cookie-accepted");
+        }
+    </script>
+</body>
+</html>
